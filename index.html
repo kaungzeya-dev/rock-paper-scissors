@@ -8,78 +8,14 @@
   </head>
 
   <body>
-    <script>
-      function computerPlay() {
-        let random = Math.floor(Math.random() * 3);
-        if (random === 0) {
-          return "Rock";
-        } else if (random === 1) {
-          return "Paper";
-        } else {
-          return "Scissors";
-        }
-      }
-
-      function playRound(playerSelection, computerSelection) {
-        if (playerSelection === "rock" && computerSelection === "Paper") {
-          computerScore++;
-          return "You lose! Paper beats Rock";
-        } else if (
-          playerSelection === "rock" &&
-          computerSelection === "Scissors"
-        ) {
-          playerScore++;
-          return "You win! Rock beats Scissors";
-        } else if (
-          playerSelection === "paper" &&
-          computerSelection === "Scissors"
-        ) {
-          computerScore++;
-          return "You lose! Scissors beats Paper";
-        } else if (
-          playerSelection === "paper" &&
-          computerSelection === "Rock"
-        ) {
-          playerScore++;
-          return "You win! Paper beats Rock";
-        } else if (
-          playerSelection === "scissors" &&
-          computerSelection === "Rock"
-        ) {
-          computerScore++;
-          return "You lose! Rock beats Scissors";
-        } else if (
-          playerSelection === "scissors" &&
-          computerSelection === "Paper"
-        ) {
-          playerScore++;
-          return "You win! Scissors beats Paper";
-        } else {
-          return "Draw";
-        }
-      }
-
-      let playerScore = 0;
-      let computerScore = 0;
-
-      function game() {
-        for (let i = 0; i < 5; i++) {
-          let player = prompt("What's your move?");
-          console.log(playRound(player.toLowerCase(), computerPlay()));
-        }
-        if (playerScore > computerScore) {
-          console.log(
-            `Congratulations. You won the game with a score of ${playerScore}-${computerScore}`
-          );
-        } else if (playerScore < computerScore) {
-          console.log(
-            `Sorry. You lost the game by ${playerScore}-${computerScore}`
-          );
-        } else {
-          console.log("It's a draw!");
-        }
-      }
-      game();
-    </script>
+    <button data-key="Rock">Rock</button>
+    <button data-key="Paper">Paper</button>
+    <button data-key="Scissors">Scissors</button>
+    <div id="container"></div>
+    <div id="score">
+      <div id="playerScore">0</div>
+      <div id="pcScore">0</div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>

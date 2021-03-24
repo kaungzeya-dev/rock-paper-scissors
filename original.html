@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Computer making random choice
+      function computerPlay() {
+        let random = Math.floor(Math.random() * 3);
+        if (random === 0) {
+          return 'Rock';
+        } else if (random === 1) {
+          return 'Paper';
+        } else {
+          return 'Scissors';
+        }
+      }
+
+      // player vs computer, write out the result and keep track of scores
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection === 'rock' && computerSelection === 'Paper') {
+          computerScore++;
+          return 'You lose! Paper beats Rock';
+        } else if (
+          playerSelection === 'rock' &&
+          computerSelection === 'Scissors'
+        ) {
+          playerScore++;
+          return 'You win! Rock beats Scissors';
+        } else if (
+          playerSelection === 'paper' &&
+          computerSelection === 'Scissors'
+        ) {
+          computerScore++;
+          return 'You lose! Scissors beats Paper';
+        } else if (
+          playerSelection === 'paper' &&
+          computerSelection === 'Rock'
+        ) {
+          playerScore++;
+          return 'You win! Paper beats Rock';
+        } else if (
+          playerSelection === 'scissors' &&
+          computerSelection === 'Rock'
+        ) {
+          computerScore++;
+          return 'You lose! Rock beats Scissors';
+        } else if (
+          playerSelection === 'scissors' &&
+          computerSelection === 'Paper'
+        ) {
+          playerScore++;
+          return 'You win! Scissors beats Paper';
+        } else {
+          return 'Draw';
+        }
+      }
+      // global variables to keep track of scores
+      let playerScore = 0;
+      let computerScore = 0;
+
+      // play 5 rounds, update the scores and announce the winner
+      function game() {
+        for (i = 0; i < 5; i++) {
+          let player = prompt("What's your move?");
+          console.log(playRound(player.toLowerCase(), computerPlay()));
+        }
+        if (playerScore > computerScore) {
+          console.log(
+            `Congratulations. You won the game with a score of ${playerScore}-${computerScore}`
+          );
+        } else if (playerScore < computerScore) {
+          console.log(
+            `Sorry. You lost the game by ${playerScore}-${computerScore}`
+          );
+        } else {
+          console.log("It's a draw!");
+        }
+      }
+      game();
+    </script>
+  </body>
+</html>
