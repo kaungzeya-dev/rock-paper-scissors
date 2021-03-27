@@ -1,0 +1,68 @@
+body {
+  background-color: #f3f4ed;
+  color: #424642;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button-container,
+h1 {
+  margin-top: 5rem;
+  padding: 3rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* buttons */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.far {
+  color: #424642;
+}
+
+.button {
+  background-color: #f3f4ed;
+  margin: 4rem;
+  border: 0.4rem #424642 solid;
+  border-radius: 0.7rem;
+  transition: all 0.7s ease;
+  outline: none;
+}
+
+/* scoreboard */
+.score-display {
+  display: flex;
+  justify-content: center;
+}
+
+#scoreboard {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #424642;
+}
+
+#playerScore,
+#pcScore {
+  padding: 0 1em 0 1em;
+}
+
+/* hover effect */
+.button:hover {
+  background-color: #bebeb9;
+}
+
+/* transition effect when clicked , works with js event listenr */
+.playing {
+  transform: scale(1.1);
+  border: 0.4rem orange solid;
+}

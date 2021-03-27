@@ -4,17 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rock Paper Scissors Game</title>
   </head>
 
   <body>
-    <button data-key="Rock">Rock</button>
-    <button data-key="Paper">Paper</button>
-    <button data-key="Scissors">Scissors</button>
-    <div id="container"></div>
-    <div id="score">
-      <div id="playerScore">0</div>
-      <div id="pcScore">0</div>
+    <h1>Rock Paper Scissors</h1>
+    <div class="button-container">
+      <div class="buttons">
+        <button data-key="rock" class="button" id="rock">
+          <i class="far fa-hand-rock fa-9x"></i>
+        </button>
+        <button data-key="paper" class="button" id="paper">
+          <i class="far fa-hand-paper fa-9x"></i>
+        </button>
+        <button data-key="scissors" class="button" id="scissors">
+          <i class="far fa-hand-scissors fa-9x"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="scoreboard">
+      <h2>Score</h2>
+      <div class="score-display">
+        <p>Player</p>
+        <p id="playerScore">0</p>
+        <p>-</p>
+        <p id="pcScore">0</p>
+        <p>Computer</p>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
